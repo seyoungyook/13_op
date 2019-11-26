@@ -8,9 +8,15 @@ struct student {
 	char name[10];
 	double grade;
 };
-int main(void) {
+void main(void) {
 	
-	struct student s1 = {19, "seyoung", 4.3
+	struct student s = {19, "seyoung", 4.3
 	};
-	return 0;
+	s.ID=1914602;
+	strcpy(s.name, "seyoung");
+	s.grade = 4.2;
+	
+	printf("ID : %d\n", s.ID);
+	printf("name : %s\n", s.name);
+	printf("grade : %f\n", s.grade);
 }
