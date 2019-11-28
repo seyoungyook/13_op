@@ -12,15 +12,17 @@ int is_whitespace(char c)
 	{
 		return 1;
 	}
+	return 0;
 }
+
 int fget_word(FILE* fp, char *word)
 {
-	char c;
 	int cnt;
+	char c;
 	
-	while ( (word[cnt] = fgetc(fp)) != EOF)
+	while ( (c = fgetc(fp)) != EOF)
 	{
-		if (is_whitespace==1)
+		if (is_whitespace==0)
 		{
 			break;
 		}
@@ -42,14 +44,14 @@ int fget_word(FILE* fp, char *word)
 		}
 		cnt++;
 	}
-	return cnt++;
+	return cnt;
 }
 
 int main (int argc, char *argv[]) {
 	
 	FILE *fp;
 	char filepath[100];
-	char word;
+	char word[100];
 	
 	
 	//file open
